@@ -10,7 +10,8 @@
 .google.token
 tts
 
-# Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
+# Ignore secrets
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
+ssh-public-key.txt
