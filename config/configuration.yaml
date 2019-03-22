@@ -1,0 +1,153 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 97
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/New_York
+  # Customization file
+  customize: !include customize.yaml
+
+frontend:
+    themes:
+        darkred:
+            # Main colors that can be changed
+            dark-primary-color: "#c66900"
+            disabled-text-color: "#545454"
+            divider-color: "rgba(255, 255, 255, 0.12)"
+            light-primary-color: "#e06c6c"
+            paper-card-background-color: "#1d1d1d"
+            paper-grey-200: "#191919"
+            paper-item-icon-color: "#d3d3d3"
+            paper-listbox-background-color: "#202020"
+            primary-background-color: "#303030"
+            primary-color: "#d32f2f"
+            primary-text-color: "#cfcfcf"
+            secondary-background-color: "#131313"
+            sidebar-text_-_background: "#62717b" 
+            # Colors based on variables, see above
+            paper-card-header-color: "var(--paper-item-icon-color)" 
+            paper-item-icon-active-color: "var(--primary-color)"
+            paper-item-icon_-_color: "var(--primary-text-color)"
+            paper-listbox-color: "var(--primary-text-color)"
+            paper-grey-50: "var(--primary-text-color)"
+            paper-slider-active-color: "var(--primary-color)"
+            paper-slider-knob-color: "var(--primary-color)"
+            paper-slider-knob-start-color: "var(--primary-color)"
+            paper-slider-pin-color: "var(--primary-color)"
+            paper-slider-secondary-color: "var(--light-primary-color)"
+            paper-toggle-button-checked-ink-color: "var(--dark-primary-color)"
+            paper-toggle-button-checked-button-color: "var(--primary-color)"
+            paper-toggle-button-checked-bar-color: "var(--light-primary-color)"
+            paper-toggle-button-unchecked-bar-color: "var(--primary-text-color)"
+            secondary-text-color: "var(--primary-color)"
+            table-row-background-color: "var(--paper-card-background-color)"
+            table-row-alternative-background-color: "var(--sidebar-text_-_background)"
+
+history:
+  include:
+    domains:
+      - sensor
+      - switch
+      - media_player
+      - light
+      - cover
+      - camera
+      
+recorder:
+  purge_keep_days: 5
+  include:
+    domains:
+      - sensor
+      - switch
+      - media_player
+      - light
+      - cover
+      - camera
+      
+panel_iframe:
+  configurator:
+    title: Configurator
+    icon: mdi:wrench
+    url: !secret configurator_url
+  pihole:
+    title: Pi-hole
+    icon: mdi:block-helper
+    url: !secret pihole_url
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+http:
+  api_password: !secret http_password
+  base_url: !secret http_base_url
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+  server_port: 8123
+
+google_assistant:
+  project_id: jrea-homeassistant
+  api_key: !secret google_assistant_api_key
+  allow_unlock: true
+  exposed_domains:
+    - switch
+    - light
+    - group
+    - lock
+  entity_config:
+    media_player.living_room_xbox_one:
+        name: Xbox
+        expose: true
+
+nest:
+  client_id: !secret nest_client_id
+  client_secret: !secret nest_client_secret
+
+water_heater:
+  - platform: econet
+    username: !secret econet_username
+    password: !secret econet_password
+
+camera:
+  - platform: mjpeg
+    name: Carter's Room Camera
+    mjpeg_url: !secret carters_room_camera_url
+
+cover:
+  - platform: mqtt
+    name: Garage Door
+    state_topic: "garage/door"
+    command_topic: "garage/button"
+    payload_open: "OPEN"
+    payload_close: "OPEN"
+    payload_stop: "OPEN"
+    state_open: "OPENED"
+    state_closed: "CLOSED"
+    optimistic: false
+    retain: false
+    value_template: '{{ value }}'
+
+#zwave:
+#  network_key: 0x2F, 0x15, 0xBE, 0xD1, 0x0A, 0x49, 0xB0, 0xDC, 0xF5, 0xB2, 0x01, 0x4D, 0x0D, 0x49, 0x2C, 0x22
+  
+#media_player:
+#  - platform: xboxone
+#    device: !secret xboxone_device_id
+#    name: Living Room Xbox One
+
+weather:
+  - platform: darksky
+    api_key: !secret darksky_api_key
+
+# Text to speech
+tts:
+  - platform: google
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml

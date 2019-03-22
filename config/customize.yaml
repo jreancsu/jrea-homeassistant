@@ -1,0 +1,4 @@
+sensor.onhub_packets_received:
+  hidden: true
+sensor.onhub_packets_sent:
+  hidden: true

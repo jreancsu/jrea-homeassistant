@@ -1,0 +1,141 @@
+2019-03-21 15:25:39 WARNING (MainThread) [homeassistant.components.http] legacy_api_password support has been enabled. If you don't require it, remove the 'api_password' from your http config.
+2019-03-21 15:25:46 ERROR (MainThread) [homeassistant.components.device_tracker] Unable to load /config/known_devices.yaml: Config file not found: /config/known_devices.yaml
+2019-03-21 15:31:02 WARNING (MainThread) [homeassistant.helpers.entity] Update of water_heater.heat_pump_water_heater_gen_4 is taking over 10 seconds
+2019-03-21 16:02:05 ERROR (SyncWorker_11) [homeassistant.components.nest.camera] Error getting camera image: HTTPSConnectionPool(host='www.dropcam.com', port=443): Max retries exceeded with url: /api/wwn.get_snapshot/CjZQYldLTklnVUZKdjhQV3pTNVZidFUzNE5Eb1N5RnRsOHdWTTZralVZbmZydzlkdFVLZFhPYVESFjFDWWRFeEdJeE0yRm9RbDNaakF1T2caNkhFUnNEd0stVDZQX3c4Vmp3QVoxclIxbHdpY0xiT1RvNXJOc3F0czdzaW15YWRfRUh3RUxTUQ?auth=813m5DtYa2pWecbiSc54T8iLvUZt9FRqOYWWBkRfqJOpXBJMreMYydHU1foHKVQWYWLE11TUaQ1gfdWvleGQtKiEJOo9Drxd0hL51tj-xoNVC1wJ7F7dQlTqPx6T0q5o50WIzgyl04F6zMcKbKomyz7eCEtQrCP5G37ufbeUMQWdepfji2n5RL6J0C9hQWdVMnbx4K_DWkMgak (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x6fa579d0>: Failed to establish a new connection: [Errno -3] Try again'))
+2019-03-21 16:16:45 WARNING (MainThread) [homeassistant.helpers.entity] Update of water_heater.heat_pump_water_heater_gen_4 is taking over 10 seconds
+2019-03-21 16:25:42 ERROR (MainThread) [homeassistant.components.updater] Got unexpected response: None
+2019-03-21 16:37:43 ERROR (SyncWorker_16) [homeassistant.components.nest.camera] Error getting camera image: HTTPSConnectionPool(host='www.dropcam.com', port=443): Max retries exceeded with url: /api/wwn.get_snapshot/CjZQYldLTklnVUZKdjhQV3pTNVZidFUzNE5Eb1N5RnRsOHdWTTZralVZbmZydzlkdFVLZFhPYVESFm9oZy1tbGZELWJUenYtRTlxM3ROVGcaNkhFUnNEd0stVDZQX3c4Vmp3QVoxclIxbHdpY0xiT1RvNXJOc3F0czdzaW15YWRfRUh3RUxTUQ?auth=813m5DtYa2pWecbiSc54T8iLvUZt9FRqOYWWBkRfqJOpXBJMreMYydHU1foHKVQWYWLE11TUaQ1gfdWvleGQtKiEJOo9Drxd0hL51tj-xoNVC1wJ7F7dQlTqPx6T0q5o50WIzgyl04F6zMcKbKomyz7eCEtQrCP5G37ufbeUMQWdepfji2n5RL6J0C9hQWdVMnbx4K_DWkMgak (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x6f083d90>: Failed to establish a new connection: [Errno -3] Try again'))
+2019-03-21 16:54:41 ERROR (MainThread) [homeassistant.core] Error doing job: SSL handshake failed
+Traceback (most recent call last):
+  File "uvloop/handles/stream.pyx", line 609, in uvloop.loop.UVStream._on_eof
+  File "uvloop/sslproto.pyx", line 171, in uvloop.loop._SSLPipe.feed_ssldata
+  File "/usr/local/lib/python3.7/ssl.py", line 763, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: UNSUPPORTED_PROTOCOL] unsupported protocol (_ssl.c:1056)
+2019-03-21 16:54:41 ERROR (MainThread) [homeassistant.core] Error doing job: SSL error errno:1 reason: UNSUPPORTED_PROTOCOL
+Traceback (most recent call last):
+  File "uvloop/sslproto.pyx", line 504, in uvloop.loop.SSLProtocol.data_received
+  File "uvloop/sslproto.pyx", line 204, in uvloop.loop._SSLPipe.feed_ssldata
+  File "uvloop/sslproto.pyx", line 171, in uvloop.loop._SSLPipe.feed_ssldata
+  File "/usr/local/lib/python3.7/ssl.py", line 763, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: UNSUPPORTED_PROTOCOL] unsupported protocol (_ssl.c:1056)
+2019-03-21 17:11:56 ERROR (MainThread) [homeassistant.core] Error doing job: SSL error errno:1 reason: KRB5_S_INIT
+Traceback (most recent call last):
+  File "uvloop/sslproto.pyx", line 504, in uvloop.loop.SSLProtocol.data_received
+  File "uvloop/sslproto.pyx", line 204, in uvloop.loop._SSLPipe.feed_ssldata
+  File "uvloop/sslproto.pyx", line 189, in uvloop.loop._SSLPipe.feed_ssldata
+  File "/usr/local/lib/python3.7/ssl.py", line 767, in unwrap
+    return self._sslobj.shutdown()
+ssl.SSLError: [SSL: KRB5_S_INIT] application data after close notify (_ssl.c:2605)
+2019-03-21 18:11:11 ERROR (MainThread) [homeassistant.core] Error doing job: SSL handshake failed
+Traceback (most recent call last):
+  File "uvloop/handles/stream.pyx", line 609, in uvloop.loop.UVStream._on_eof
+  File "uvloop/sslproto.pyx", line 171, in uvloop.loop._SSLPipe.feed_ssldata
+  File "/usr/local/lib/python3.7/ssl.py", line 763, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1056)
+2019-03-21 18:11:11 ERROR (MainThread) [homeassistant.core] Error doing job: SSL error errno:1 reason: WRONG_VERSION_NUMBER
+Traceback (most recent call last):
+  File "uvloop/sslproto.pyx", line 504, in uvloop.loop.SSLProtocol.data_received
+  File "uvloop/sslproto.pyx", line 204, in uvloop.loop._SSLPipe.feed_ssldata
+  File "uvloop/sslproto.pyx", line 171, in uvloop.loop._SSLPipe.feed_ssldata
+  File "/usr/local/lib/python3.7/ssl.py", line 763, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1056)
+2019-03-21 18:18:35 ERROR (MainThread) [homeassistant.helpers.entity] Update for water_heater.heat_pump_water_heater_gen_4 fails
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/usr/local/lib/python3.7/site-packages/urllib3/util/connection.py", line 57, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/local/lib/python3.7/socket.py", line 748, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Try again
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 343, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 839, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connection.py", line 301, in connect
+    conn = self._new_conn()
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x6f312170>: Failed to establish a new connection: [Errno -3] Try again
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/usr/local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/usr/local/lib/python3.7/site-packages/urllib3/util/retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='econet-api.rheemcert.com', port=443): Max retries exceeded with url: /equipment/136134 (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x6f312170>: Failed to establish a new connection: [Errno -3] Try again'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/homeassistant/helpers/entity.py", line 220, in async_update_ha_state
+    await self.async_device_update()
+  File "/usr/local/lib/python3.7/site-packages/homeassistant/helpers/entity.py", line 348, in async_device_update
+    await self.hass.async_add_executor_job(self.update)
+  File "/usr/local/lib/python3.7/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/local/lib/python3.7/site-packages/homeassistant/components/water_heater/econet.py", line 210, in update
+    self.water_heater.update_state()
+  File "/usr/local/lib/python3.7/site-packages/pyeconet/equipment/water_heater.py", line 111, in update_state
+    device_state = self.api_interface.get_device(self.id)
+  File "/usr/local/lib/python3.7/site-packages/pyeconet/api.py", line 94, in get_device
+    arequest = requests.get(url, headers=HEADERS)
+  File "/usr/local/lib/python3.7/site-packages/requests/api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/requests/api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/requests/sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.7/site-packages/requests/sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='econet-api.rheemcert.com', port=443): Max retries exceeded with url: /equipment/136134 (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x6f312170>: Failed to establish a new connection: [Errno -3] Try again'))
+2019-03-21 19:00:19 WARNING (MainThread) [homeassistant.helpers.entity] Update of water_heater.heat_pump_water_heater_gen_4 is taking over 10 seconds
+2019-03-21 19:15:33 WARNING (MainThread) [homeassistant.helpers.entity] Update of water_heater.heat_pump_water_heater_gen_4 is taking over 10 seconds
+2019-03-21 19:22:33 ERROR (MainThread) [homeassistant.core] Error doing job: SSL handshake failed
+Traceback (most recent call last):
+  File "uvloop/handles/stream.pyx", line 609, in uvloop.loop.UVStream._on_eof
+  File "uvloop/sslproto.pyx", line 171, in uvloop.loop._SSLPipe.feed_ssldata
+  File "/usr/local/lib/python3.7/ssl.py", line 763, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1056)
+2019-03-21 19:22:33 ERROR (MainThread) [homeassistant.core] Error doing job: SSL error errno:1 reason: WRONG_VERSION_NUMBER
+Traceback (most recent call last):
+  File "uvloop/sslproto.pyx", line 504, in uvloop.loop.SSLProtocol.data_received
+  File "uvloop/sslproto.pyx", line 204, in uvloop.loop._SSLPipe.feed_ssldata
+  File "uvloop/sslproto.pyx", line 171, in uvloop.loop._SSLPipe.feed_ssldata
+  File "/usr/local/lib/python3.7/ssl.py", line 763, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1056)
+2019-03-21 19:30:48 WARNING (MainThread) [homeassistant.helpers.entity] Update of water_heater.heat_pump_water_heater_gen_4 is taking over 10 seconds
+2019-03-21 19:46:03 WARNING (MainThread) [homeassistant.helpers.entity] Update of water_heater.heat_pump_water_heater_gen_4 is taking over 10 seconds
+2019-03-21 21:25:00 ERROR (MainThread) [homeassistant.core] Error doing job: SSL handshake failed
+Traceback (most recent call last):
+  File "uvloop/handles/stream.pyx", line 609, in uvloop.loop.UVStream._on_eof
+  File "uvloop/sslproto.pyx", line 171, in uvloop.loop._SSLPipe.feed_ssldata
+  File "/usr/local/lib/python3.7/ssl.py", line 763, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1056)
+2019-03-21 21:25:00 ERROR (MainThread) [homeassistant.core] Error doing job: SSL error errno:1 reason: WRONG_VERSION_NUMBER
+Traceback (most recent call last):
+  File "uvloop/sslproto.pyx", line 504, in uvloop.loop.SSLProtocol.data_received
+  File "uvloop/sslproto.pyx", line 204, in uvloop.loop._SSLPipe.feed_ssldata
+  File "uvloop/sslproto.pyx", line 171, in uvloop.loop._SSLPipe.feed_ssldata
+  File "/usr/local/lib/python3.7/ssl.py", line 763, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1056)
