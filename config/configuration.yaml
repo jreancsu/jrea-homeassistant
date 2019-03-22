@@ -99,10 +99,7 @@ google_assistant:
     - light
     - group
     - lock
-  entity_config:
-    media_player.living_room_xbox_one:
-        name: Xbox
-        expose: true
+    - cover
 
 nest:
   client_id: !secret nest_client_id
@@ -131,14 +128,6 @@ cover:
     optimistic: false
     retain: false
     value_template: '{{ value }}'
-
-#zwave:
-#  network_key: 0x2F, 0x15, 0xBE, 0xD1, 0x0A, 0x49, 0xB0, 0xDC, 0xF5, 0xB2, 0x01, 0x4D, 0x0D, 0x49, 0x2C, 0x22
-  
-#media_player:
-#  - platform: xboxone
-#    device: !secret xboxone_device_id
-#    name: Living Room Xbox One
 
 weather:
   - platform: darksky
